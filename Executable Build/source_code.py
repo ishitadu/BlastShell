@@ -310,8 +310,6 @@ while True:
             print("Done! Returned to home.")
 
         elif vidformat == "aud":
-            print("Make sure to install 'ffmpeg' on your computer, or the shell may not work properly!")
-            print()
             ydl_opts = {
                 'format': 'bestaudio/best',
                 'postprocessors': [{
