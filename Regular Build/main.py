@@ -5,7 +5,7 @@
 
 # Important system variables.
 
-Version = "1.0.0"
+Version = "1.0"
 Creator = "HitBlast"
 Patch_Date = "22.06.2020 June, Python 3.8.3"
 License = "Apache License 2.0"
