@@ -44,6 +44,7 @@ build = platform.version()
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
 print("BlastShell | Type 'help' or 'about' for more info. ")
+print("Opened in " + dir_path)
 print()
 
 while True:
@@ -56,7 +57,7 @@ while True:
         print("BlastShell | Created By " + Creator + " | " + "Version: " + Version)
         print("Licensed under " + License + " | Executable Build ")
         print("Last updated on " + Patch_Date)
-        print("-------------------------------------------------------------------------------------")
+        print("-------------------------------------------------------------------------")
         print()
         print("BlastShell is an interactive command line / shell developed by an independent")
         print("developer named HitBlast. It will help you to run many useful commands!")

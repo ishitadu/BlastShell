@@ -78,7 +78,7 @@ while True:
         print("BlastShell | Created By " + Creator + " | Version: " + Version)
         print("Licensed under " + License + " | Regular Build")
         print("Last updated on " + Patch_Date)
-        print("-------------------------------------------------------------------------------------")
+        print("-------------------------------------------------------------------------")
         print()
         print("BlastShell is an interactive command line / shell developed by an independent")
         print("developer named HitBlast. It will help you to run many useful commands!")
