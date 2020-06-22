@@ -1,1 +1,0 @@
-Install 'ffmpeg' on your PC first, then run BlastShell.exe! Otherwise, the program may not work properly!

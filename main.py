@@ -1,6 +1,7 @@
-# This code is licensed under Apache License 2.0, so read the LICENSE file before going any further.
+# This code is licensed under Apache License 2.0, so read the LICENSE file before going any forward.
 # You are allowed to read, modify and distribute this code.
 # You are not allowed to make changes to it's name and claim it as yours!
+# Read the README.md file carefully to get useful instructions!
 
 
 # Important system variables.
@@ -9,29 +10,6 @@ Version = "1.0"
 Creator = "HitBlast"
 Patch_Date = "22.06.2020 June, Python 3.8.3"
 License = "Apache License 2.0"
-
-
-# This code checks for important dependencies by itself.
-
-import os
-
-def cls():
-    os.system('cls')
-
-
-print("Upgrading PIP...")
-print()
-import subprocess
-subprocess.run("python -m pip install --upgrade pip", shell=True, check=True)
-print()
-print("Checking for missing dependencies...")
-print()
-subprocess.run("python -m pip install ffmpeg-python", shell=True, check=True)
-subprocess.run("python -m pip install youtube-dl", shell=True, check=True)
-subprocess.run("python -m pip install pywin32", shell=True, check=True)
-cls()
-
-# Done setting-up dependencies!
 
 
 # Modules to use!
@@ -46,8 +24,6 @@ S = Dispatch("SAPI.SpVoice")
 from datetime import datetime
 
 import webbrowser
-
-import ffmpeg
 
 import shutil
 
@@ -92,9 +68,9 @@ while True:
         print("=========================================================================")
 
     elif user_command == "help":
-        print("==================================================")
-        print("                  COMMANDS MENU")
-        print("--------------------------------------------------")
+        print("=================================================================")
+        print("                          COMMANDS MENU")
+        print("-----------------------------------------------------------------")
         print("add    - Executes addition console.")
         print("sub    - Executes subtraction console.")
         print("div    - Executes divide console.")
@@ -108,7 +84,7 @@ while True:
         print("device - Displays computer specifications in detail.")
         print("ytdl   - Downloads a specific video from YouTube when executed.")
         print("         (as video / audio)")
-        print("==================================================")
+        print("=================================================================")
 
     elif user_command == "exit":
         print("Closing shell...")
