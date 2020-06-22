@@ -1,1 +1,1 @@
-Run install_missing_dependencies.py before executing BlastShell.exe, or the program may not work properly!
+Install 'ffmpeg' on your PC first, then run BlastShell.exe! Otherwise, the program may not work properly!
