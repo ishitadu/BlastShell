@@ -22,7 +22,7 @@ while True:
         subprocess.run("python -m pip install ffmpeg-python", shell=True, check=True)
         subprocess.run("python -m pip install youtube-dl", shell=True, check=True)
         subprocess.run("python -m pip install pywin32", shell=True, check=True)
-        cls()
+        print()
         print("Closing in 3 seconds...")
         time.sleep(3)
         break
