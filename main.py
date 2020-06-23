@@ -1,5 +1,5 @@
-# This code is licensed under Apache License 2.0, so read the LICENSE file before going any forward.
-# You are allowed to read, modify and distribute this code.
+# This code is licensed under MIT License, so read the LICENSE file before going any forward.
+# Grab a copy of the license if you want to make changes to the code.
 # You are not allowed to make changes to it's name and claim it as yours!
 # Read the README.md file carefully to get useful instructions!
 
@@ -8,8 +8,8 @@
 
 Version = "1.0"
 Creator = "HitBlast"
-Patch_Date = "22.06.2020 June, Python 3.8.3"
-License = "Apache License 2.0"
+Patch_Date = "23.06.2020 June, Python 3.8.3"
+License = "MIT License"
 
 
 # Modules to use!
