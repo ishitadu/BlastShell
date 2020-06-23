@@ -3,7 +3,7 @@
  
 ##### _Version & License_
  BlastShell is an open-source project based on Python 3.8.3 and it's licensed under MIT License! If you want to contribute, then go ahead! Just make sure you have read the LICENSE file correctly!
- You can read, modify and redistribute the project only if you have a copy of the license. Grab one from here:
+ You can read, modify and redistribute the project only if you have a copy of the license.
 
 ##
 ### Installation Instructions
