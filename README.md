@@ -10,7 +10,13 @@
 ##
 ### Installation Instructions
 You have to install these missing dependencies before running the source code (main.py) or the Windows Executable file (Executables\BlastShell):
- 1. ffmpeg [(Download from here!)](https://github.com/FFmpeg/FFmpeg) or, head over to ffmpeg.org to download!
+ 1. ffmpeg - [Explore GitHub](https://github.com/FFmpeg/FFmpeg) or, head over to https://ffmpeg.org/ to download!
+ 2. Python - [Explore GitHub](https://github.com/python/) or, head over to https://www.python.org/ to download!
 
-After downloading all of the dependencies above, install it and then download BlastShell from GitHub and you are ready to run it! 
+{Please note that you only need Python to execute the source code, not to run the executable file (**BlastShell.exe**), if you only need to run the executable file, then just grab ffmpeg from above, you won't be needing Python!}
 
+After downloading all of the dependencies and installing them,
+ 1. Open your Git terminal, and then type: git clone https://github.com/HitBlast/BlastShell.git
+    Or, download the ZIP file of BlastShell from GitHub and extract it.
+    
+That's it! You're ready to run BlastShell in any format!
