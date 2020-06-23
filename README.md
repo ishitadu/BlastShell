@@ -9,8 +9,8 @@
 
 ##
 ### Installation Instructions
-You have to install these missing applications before running the source code (main.py) or the Windows Executable file (Executables\BlastShell):
- 1. ffmpeg [(Download from here!)](https://github.com/FFmpeg/FFmpeg)
+You have to install these missing dependencies before running the source code (main.py) or the Windows Executable file (Executables\BlastShell):
+ 1. ffmpeg [(Download from here!)](https://github.com/FFmpeg/FFmpeg) or, head over to ffmpeg.org to download!
 
-After downloading ffmpeg, install it and then download BlastShell from GitHub and you are ready to run it! 
+After downloading all of the dependencies above, install it and then download BlastShell from GitHub and you are ready to run it! 
 
