@@ -1,20 +1,23 @@
-# This code is licensed under MIT License, so read the LICENSE file before going any forward.
-# Grab a copy of the license if you want to make changes to the code.
-# You are not allowed to make changes to it's name and claim it as yours!
-# Read the README.md file carefully to get useful instructions!
-
+# Copyright (c) 2020 Anindya Shiddhartha
+# Read the LICENSE and README.md file for more information.
+# You are only allowed to make changes to the code if you have the license file of the project.
 
 # Important system variables.
 
 Version = "1.0"
 Creator = "HitBlast"
-Patch_Date = "23.06.2020 June, Python 3.8.3"
-License = "MIT License"
+Patch_Date = "24.06.2020 June, Python 3.8.3"
+License = "Copyright (c) 2020 Anindya Shiddhartha"
 
 
 # Modules to use!
 
 import time
+
+import os
+def cls():
+    os.system("clear")
+
 
 import youtube_dl
 
@@ -52,7 +55,7 @@ while True:
     if user_command == "about":
         print("=========================================================================")
         print("BlastShell | Created By " + Creator + " | Version: " + Version)
-        print("Licensed under " + License + " | Regular Build")
+        print(License)
         print("Last updated on " + Patch_Date)
         print("-------------------------------------------------------------------------")
         print()
