@@ -8,11 +8,6 @@ import subprocess
 
 import time
 
-import os
-def cls():
-    os.system("clear")
-
-
 while True:
     print()
     user_command = input("Start process? (yes or no): ")
@@ -32,8 +27,9 @@ while True:
         break
 
     elif user_command == "no":
-        cls()
         print("Cleaning up...")
+        time.sleep(1)
+        break
 
     else:
         print("Command not found!")
