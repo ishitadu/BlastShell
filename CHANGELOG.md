@@ -1,9 +1,10 @@
-##**BlastShell** | Version 1.1 - Changelog
+BlastShell | Version 1.1 - Changelog
 
 As this release is the first initial release after the main release, it contains a little-bit of bug fixes and some minor changes.
 
-If you are new, then check out **README.md** to get some basic information about BlastShell!
-####What's new in this release:
+If you are new, then check out README.md to get some basic information about BlastShell!
+
+What's new in this release:
 Minor changes:
 <ul>
 <li>
