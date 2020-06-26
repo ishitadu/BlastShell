@@ -16,7 +16,7 @@ import time
 
 import os
 def cls():
-    os.system("clear")
+    os.system('cls')
 
 
 import youtube_dl
