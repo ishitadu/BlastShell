@@ -4,10 +4,10 @@
 
 # Important system variables.
 
-Version = "1.0"
+Version = "1.1"
 Creator = "HitBlast"
-Patch_Date = "24.06.2020 June, Python 3.8.3"
-License = "Copyright (c) 2020 Anindya Shiddhartha"
+Patch_Date = "26.06.2020 June, Python 3.8.3"
+License = "(c) 2020 Anindya Shiddhartha. All rights reserved."
 
 
 # Modules to use!
@@ -44,18 +44,17 @@ build = platform.version()
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
 print("BlastShell | Type 'help' or 'about' for more info. ")
-print("Opened in " + dir_path)
+print(License)
 print()
 
 while True:
     print()
-    user_command = input(">>> ")
+    user_command = input(dir_path + "> ")
     print()
 
     if user_command == "about":
         print("=========================================================================")
         print("BlastShell | Created By " + Creator + " | Version: " + Version)
-        print(License)
         print("Last updated on " + Patch_Date)
         print("-------------------------------------------------------------------------")
         print()
@@ -82,8 +81,8 @@ while True:
         print("speak  - Speaks a text / word / letter for user.")
         print("clock  - Displays current date and time.")
         print("webbie - Executes web console window.")
-        print("clear  - Refreshes command window.")
-        print("delete - Removes a file from a directory.")
+        print("cls    - Refreshes command window.")
+        print("del    - Removes a file from a directory.")
         print("device - Displays computer specifications in detail.")
         print("ytdl   - Downloads a specific video from YouTube when executed.")
         print("         (as video / audio)")
@@ -226,13 +225,13 @@ while True:
             else:
                 print("Whoa! Command not found. Try typing 'helpweb' for executable commands.")
 
-    elif user_command == "clear":
+    elif user_command == "cls":
         cls()
         print("BlastShell | Type 'help' or 'about' for more info. ")
-        print("Opened in " + dir_path)
+        print(License)
         print()
 
-    elif user_command == "delete":
+    elif user_command == "del":
         while True:
             filetype = input("Enter file type ('helpdel' for commands): ")
             print()
