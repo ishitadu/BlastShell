@@ -1,4 +1,4 @@
-# Copyright (c) 2020 Anindya Shiddhartha
+# Copyright (c) 2020 Anindya Shiddhartha, licensed under MIT License.
 # Read the LICENSE and README.md file for more information.
 # You are only allowed to make changes to the code if you have the license file of the project.
 
@@ -6,7 +6,7 @@
 
 Version = "1.1"
 Creator = "HitBlast"
-Patch_Date = "26.06.2020 June, Python 3.8.3"
+Patch_Date = "28.06.2020 June, Python 3.8.3"
 License = "(c) 2020 Anindya Shiddhartha. All rights reserved."
 
 

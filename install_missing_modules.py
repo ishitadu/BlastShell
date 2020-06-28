@@ -1,4 +1,4 @@
-# Copyright (c) 2020 Anindya Shiddhartha
+# Copyright (c) 2020 Anindya Shiddhartha, licensed under MIT License.
 # Read the LICENSE and README.md file for more information.
 # You are only allowed to make changes to the code if you have the license file of the project.
 # This is the Python file for installing missing modules for the source code.
