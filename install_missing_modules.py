@@ -22,11 +22,13 @@ while True:
         subprocess.run("python -m pip install pywin32", shell=True, check=True)
         subprocess.run("python -m pip install youtube-dl", shell=True, check=True)
         print()
+        
         print("Process finished! Exiting window...")
         time.sleep(1)
         break
 
     elif user_command == "no":
+        
         print("Cleaning up...")
         time.sleep(1)
         break
