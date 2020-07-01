@@ -43,7 +43,7 @@ build = platform.version()
 # Main interface is written below.
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
-print("BlastShell | Type 'help' or 'about' for more info. ")
+print("BlastShell | Type 'help' or 'about' for more information.")
 print(License)
 print()
 
@@ -177,7 +177,7 @@ while True:
                     print("Mathematical memory is empty!")
 
                 else:
-                    print("Stored value: "), print(math_mem)
+                    print("Stored value: " + str(math_mem))
 
             elif math_command == "memcls":
                 math_mem -= math_mem
@@ -193,21 +193,17 @@ while True:
                     num1 = float(input("Value 1 <> "))
                     num2 = float(input("Value 2 <> "))
                     sum = add(num1, num2)
-                    print(), print("Result: "), print(sum)
                     math_mem += sum
-
-                    print()
-                    print("Added result to memory!")
                     math_contval += 1
+                    print(), print("Result: " + str(sum) + " (Added to memory)")
 
                 else:
+                    print("Using previous memory result for main value.")
+                    print()
                     num1 = float(input("Value <> "))
                     sum = add(math_mem, num1)
-                    print(), print("Result: "), print(sum)
                     math_mem += num1
-
-                    print()
-                    print("Added result to memory!")
+                    print(), print("Result: " + str(sum) + " (Refreshed memory)")
 
             elif math_command == "sub":
 
@@ -215,21 +211,17 @@ while True:
                     num1 = float(input("Value 1 <> "))
                     num2 = float(input("Value 2 <> "))
                     sum = sub(num1, num2)
-                    print(), print("Result: "), print(sum)
                     math_mem += sum
-
-                    print()
-                    print("Added result to memory!")
                     math_contval += 1
+                    print(), print("Result: " + str(sum) + " (Added to memory)")
 
                 else:
+                    print("Using previous memory result for main value.")
+                    print()
                     num1 = float(input("Value <> "))
                     sum = sub(math_mem, num1)
-                    print(), print("Result: "), print(sum)
                     math_mem -= num1
-
-                    print()
-                    print("Added result to memory!")
+                    print(), print("Result: " + str(sum) + " (Refreshed memory)")
 
             elif math_command == "div":
 
@@ -237,21 +229,17 @@ while True:
                     num1 = float(input("Value 1 <> "))
                     num2 = float(input("Value 2 <> "))
                     sum = div(num1, num2)
-                    print(), print("Result: "), print(sum)
                     math_mem += sum
-
-                    print()
-                    print("Added result to memory!")
                     math_contval += 1
+                    print(), print("Result: " + str(sum) + " (Added to memory)")
 
                 else:
+                    print("Using previous memory result for main value.")
+                    print()
                     num1 = float(input("Value <> "))
                     sum = div(math_mem, num1)
-                    print(), print("Result: "), print(sum)
                     math_mem /= num1
-
-                    print()
-                    print("Added result to memory!")
+                    print(), print("Result: " + str(sum) + " (Refreshed memory)")
 
             elif math_command == "multi":
 
@@ -259,21 +247,17 @@ while True:
                     num1 = float(input("Value 1 <> "))
                     num2 = float(input("Value 2 <> "))
                     sum = multi(num1, num2)
-                    print(), print("Result: "), print(sum)
                     math_mem += sum
-
-                    print()
-                    print("Added result to memory!")
                     math_contval += 1
+                    print(), print("Result: " + str(sum) + " (Refreshed memory)")
 
                 else:
+                    print("Using previous memory result for main value.")
+                    print()
                     num1 = float(input("Value <> "))
                     sum = multi(math_mem, num1)
-                    print(), print("Result: "), print(sum)
                     math_mem *= num1
-
-                    print()
-                    print("Added result to memory!")
+                    print(), print("Result: " + str(sum) + " (Refreshed memory)")
 
             else:
                 print("Whoa! Command not found! Try typing 'help' to show executable commands.")
@@ -400,8 +384,8 @@ while True:
                 mydoc = input("File path: ")
                 print()
 
-                if operating_system.path.isfile(mydoc):
-                    operating_system.remove(mydoc)
+                if os.path.isfile(mydoc):
+                    os.remove(mydoc)
                     print("Deleted file successfully! Returned to home.")
                     break
 
