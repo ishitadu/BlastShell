@@ -79,7 +79,7 @@ while True:
         print("clock  - Displays current date and time.")
         print("web    - Executes web console.")
         print("cls    - Refreshes command window.")
-        print("cdset  - Sets current working directory to a given path.")
+        print("cd     - Sets current working directory to a given path.")
         print("del    - Removes a file from a directory.")
         print("device - Displays computer specifications in detail.")
         print("ytdl   - Downloads a specific video from YouTube when executed.")
@@ -93,7 +93,7 @@ while True:
         print("Closing shell...")
         break
 
-    elif user_command == "cdset":
+    elif user_command == "cd":
         dir_path = input("Path: ")
 
         try:
