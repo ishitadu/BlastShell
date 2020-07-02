@@ -4,8 +4,7 @@
 
 # Program variables.
 Version = "1.2"
-Creator = "HitBlast"
-Patch_Date = "01.07.2020 July, Python 3.8.3"
+Patch_Date = "02.07.2020 July, Python 3.8.3"
 License = "(c) 2020 Anindya Shiddhartha. All rights reserved."
 
 # Mathematical variables.
@@ -18,6 +17,8 @@ import time
 import socket
 
 import os
+dir_path = os.getcwd()
+
 def cls():
     os.system('cls')
 
@@ -41,7 +42,7 @@ build = platform.version()
 
 
 # Main interface is written below.
-dir_path = os.path.dirname(os.path.realpath(__file__))
+
 
 print("BlastShell | Type 'help' or 'about' for more information.")
 print(License)
@@ -54,7 +55,7 @@ while True:
 
     if user_command == "about":
         print()
-        print("BlastShell | Created By " + Creator + " | Version: " + Version)
+        print("BlastShell | Version: " + Version)
         print("Last updated on " + Patch_Date)
         print()
         print()
@@ -71,12 +72,14 @@ while True:
         print()
 
     elif user_command == "help":
+        print()
         print("math   - Executes mathematical console.")
         print("exit   - Terminates the shell.")
         print("speak  - Speaks a text / word / letter for user.")
         print("clock  - Displays current date and time.")
         print("web    - Executes web console.")
         print("cls    - Refreshes command window.")
+        print("cdset  - Sets current working directory to a given path.")
         print("del    - Removes a file from a directory.")
         print("device - Displays computer specifications in detail.")
         print("ytdl   - Downloads a specific video from YouTube when executed.")
@@ -84,10 +87,22 @@ while True:
         print("ctext  - Executes text file builder which enables user to create & modify")
         print("         text files.")
         print("ipconf - Displays device's hostname and IP address.")
+        print()
 
     elif user_command == "exit":
         print("Closing shell...")
         break
+
+    elif user_command == "cdset":
+        dir_path = input("Path: ")
+
+        try:
+            os.chdir(dir_path)
+
+        except:
+            print()
+            print("Path not found!")
+            dir_path = os.getcwd()
 
     elif user_command == "ipconf":
         def get_Host_name_IP(): 
@@ -95,8 +110,10 @@ while True:
             try: 
                 host_name = socket.gethostname() 
                 host_ip = socket.gethostbyname(host_name) 
+                print()
                 print("Hostname   : ",host_name) 
                 print("IP Address : ",host_ip) 
+                print()
 
             except: 
                 print("Unable to get hostname and IP address! Try again later.") 
@@ -112,11 +129,13 @@ while True:
             print()
 
             if ctext_command == "help":
+                print()
                 print("add  - Creates a text file in program directory.")
                 print("mod  - Created a text file with text in program") 
                 print("       directory.")
                 print("exit - Terminates text file builder.")
                 print("cls  - Refreshes command window.")
+                print()
 
             elif ctext_command == "add":
                 my_file = open("New Text Document.txt","w+")
@@ -158,6 +177,7 @@ while True:
             print()
 
             if math_command == "help":
+                print()
                 print("add    - Adds two numbers.")
                 print("sub    - Subtracts one number with another.")
                 print("div    - Divides one number with another.")
@@ -166,6 +186,7 @@ while True:
                 print("memcls - Clears application maemory.")
                 print("cls    - Refreshes command window.")
                 print("exit   - Quits mathematical console.")
+                print()
 
             elif math_command == "exit":
                 print("Successfully terminated mathematical console!")
@@ -280,10 +301,12 @@ while True:
             print()
 
             if webcommand == "help":
+                print()
                 print("csite - Opens a custom webpage given by user.")
                 print("sites - Shows a list of popular sites to open.")
                 print("cls   - Refreshes command window.")
                 print("exit  - Closes web console.")
+                print()
 
             elif webcommand == "csite":
                 website = input("Website link / URL: ")
@@ -358,6 +381,7 @@ while True:
             print()
 
             if filetype == "help":
+                print()
                 print("dir  - Assigns file as directory.")
                 print("doc  - Assigns file as document.")
                 print("cls  - Refreshes command window.")
@@ -401,10 +425,12 @@ while True:
                 print("File type / command not recognized! Type 'help' to show executable commands.")
 
     elif user_command == "device":
+        print()
         print("Device platform  : " + device_platform)
         print("Chipset          : " + processor)
         print("Operating system : " + operating_system)
         print("Build            : " + build)
+        print()
 
     elif user_command == "ytdl":
 
