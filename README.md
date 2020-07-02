@@ -8,7 +8,7 @@
  MIT License: Copyright (c) 2020 Anindya Shiddhartha
 ##
 ### Installation Instructions
-You have to install these missing dependencies before running the source code (main.py) or the Windows Executable file (Executables\BlastShell):
+You have to install these missing dependencies before running the source code (main.py) or the Windows Executable file (Executables\BlastShell.exe):
  1. ffmpeg - [Explore GitHub](https://github.com/FFmpeg/FFmpeg) or, head over to https://ffmpeg.org/ to download!
  2. Python - [Explore GitHub](https://github.com/python/) or, head over to https://www.python.org/ to download!
 
