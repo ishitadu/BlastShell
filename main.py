@@ -4,7 +4,7 @@
 
 # Program variables.
 Version = "1.2"
-Patch_Date = "02.07.2020 July, Python 3.8.3"
+Patch_Date = "03.07.2020 July, Python 3.8.3"
 License = "(c) 2020 Anindya Shiddhartha. All rights reserved."
 
 # Mathematical variables.
@@ -439,39 +439,57 @@ while True:
                 with youtube_dl.YoutubeDL(ydl_opts) as ydl:
                     ydl.download([vidmain])
 
-
-            vidformat = input("Download as (audio/video): ")
-            print()
+            vidformat = input("Download as (audio/video/exit): ")
 
             if vidformat == "video":
-                ydl_opts = {}
-                link_of_the_video = input("Video link / URL: ")
-                print()
-                vidmain = link_of_the_video.strip()
-                dwl_vid()
-                print()
-                print("Done! Returned to home.")
+
+                try:
+                    ydl_opts = {}
+                    link_of_the_video = input("Video link / URL: ")
+                    print()
+                    vidmain = link_of_the_video.strip()
+                    dwl_vid()
+                    print()
+                    print("Done! Returned to home.")
+                    break
+
+                except:
+                    print()
+                    print("Invalid link! Try again with a valid video link / URL.")
+                    print()
 
             elif vidformat == "audio":
-                ydl_opts = {
-                    'format': 'bestaudio/best',
-                    'postprocessors': [{
-                        'key': 'FFmpegExtractAudio',
-                        'preferredcodec': 'mp3',
-                        'preferredquality': '192',
-                    }],
-                }
 
-                print()
-                link_of_the_video = input("Video link / URL: ")
-                print()
-                vidmain = link_of_the_video.strip()
-                dwl_vid()
-                print()
-                print("Done! Returned to home.")
+                try:
+                    ydl_opts = {
+                        'format': 'bestaudio/best',
+                        'postprocessors': [{
+                            'key': 'FFmpegExtractAudio',
+                            'preferredcodec': 'mp3',
+                            'preferredquality': '192',
+                        }],
+                    }
+
+                    print()
+                    link_of_the_video = input("Video link / URL: ")
+                    print()
+                    vidmain = link_of_the_video.strip()
+                    dwl_vid()
+                    print()
+                    print("Done! Returned to home.")
+                    break
+                
+                except:
+                    print()
+                    print("Invalid link! Try again with a valid video link / URL.")
+                    print()
+
+            elif vidformat == "exit":
+                break
 
             else:
                 print("Format not recognised! Type either video or audio for format selection.")
+                print()
 
     else:
         print("Whoa! Command not found. Try typing 'help' to show executable commands.")
