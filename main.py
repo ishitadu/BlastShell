@@ -3,8 +3,8 @@
 # You are only allowed to make changes to the code if you have the license file of the project.
 
 # Program variables.
-Version = "1.2"
-Patch_Date = "03.07.2020 July, Python 3.8.3"
+Version = "1.3Pre1"
+Patch_Date = "10.07.2020 July"
 License = "(c) 2020 Anindya Shiddhartha. All rights reserved."
 
 # Mathematical variables.
@@ -12,15 +12,16 @@ math_mem =0
 math_contval =0
 
 # Modules to use!
-import time
+print("This will take a few moments...")
 
-import socket
+import time
 
 import os
 dir_path = os.getcwd()
 
-def cls():
-    os.system('cls')
+import socket
+
+import random
 
 import youtube_dl
 
@@ -42,58 +43,59 @@ build = platform.version()
 
 
 # Main interface is written below.
-
-
+os.system('cls')
 print("BlastShell | Type 'help' or 'about' for more information.")
 print(License)
 print()
 
 while True:
-    print()
-    user_command = input(dir_path + "> ")
-    print()
+    print("\u001b[39m")
+    user_command = input(dir_path + ">\u001b[36m ")
+    print("\u001b[39m")
 
     if user_command == "about":
         print()
-        print("BlastShell | Version: " + Version)
+        print("\033[1;34mBlastShell\u001b[39m | Version: " + Version)
         print("Last updated on " + Patch_Date)
+        print("Licensed under MIT; Copyright " + License)
         print()
+        print("An open-source interactive command line interface / shell developed mainly")
+        print("for solving complex mathematical problems and for accomplishing day-to-day")
+        print("tasks. BlastShell has a handful of useful commands available inside it, so")
+        print("that users can use this application freely, without having to use internet")
+        print("connection.")
         print()
-        print("BlastShell is an interactive command line / shell developed by an")
-        print("independent developer named HitBlast. It will help you to run many")
-        print("useful commands! It is an open-source project, which means anyone")
-        print("can contribute in it!")
+        print("BlastShell gets updated frequently in order to maintain stable experience,")
+        print("and also to introduce new commands and features to the users of it.")
         print()
-        print("The shell will get updates regularly within it's lifetime.")
-        print()
-        print("If you are having any issues with the app or just want to give a")
-        print("suggestion, feel free to share!")
-        print()
+        print("Reach / Support: hitblastofficial@gmail.com")
         print()
 
     elif user_command == "help":
         print()
-        print("math   - Executes mathematical console.")
-        print("exit   - Terminates the shell.")
-        print("speak  - Speaks a text / word / letter for user.")
-        print("clock  - Displays current date and time.")
-        print("web    - Executes web console.")
-        print("cls    - Refreshes command window.")
-        print("cd     - Sets current working directory to a given path.")
-        print("del    - Removes a file from a directory.")
-        print("device - Displays computer specifications in detail.")
-        print("ytdl   - Downloads a specific video from YouTube when executed.")
-        print("         (as video / audio)")
-        print("ctext  - Executes text file builder which enables user to create & modify")
-        print("         text files.")
-        print("ipconf - Displays device's hostname and IP address.")
+        print("cls       Refreshes the screen.")
+        print("clock     Displays current date and time.")
+        print("crdir     Creates a directory in current working directory.")
+        print("ctext     Executes text file builder which enables user to create & modify")
+        print("          text files.")
+        print("del       Removes a file or directory.")
+        print("device    Displays computer specifications in detail.")
+        print("exit      Terminates the shell.")
+        print("ipconf    Displays device's hostname and IP address.")
+        print("math      Executes mathematical console.")
+        print("speak     Speaks a text given by user.")
+        print("setcd     Sets current working directory to a given path.")
+        print("vdl       Downloads a specific video from YouTube as well as from")
+        print("          other destinations when executed. (as video/audio)")
+        print("webent    Enables console to enter specific or custom")
+        print("          websites.")
         print()
 
     elif user_command == "exit":
-        print("Closing shell...")
-        break
+         print("Closing shell...")
+         break 
 
-    elif user_command == "cd":
+    elif user_command == "setcd":
         dir_path = input("Path: ")
 
         try:
@@ -101,24 +103,27 @@ while True:
 
         except:
             print()
-            print("Path not found!")
+            print("\u001b[31mPath not found!\u001b[39m")
             dir_path = os.getcwd()
 
+        else:
+            print()
+            print("Path set as current working directory.")
+
     elif user_command == "ipconf":
-        def get_Host_name_IP(): 
 
-            try: 
-                host_name = socket.gethostname() 
-                host_ip = socket.gethostbyname(host_name) 
-                print()
-                print("Hostname   : ",host_name) 
-                print("IP Address : ",host_ip) 
-                print()
+        try: 
+            host_name = socket.gethostname() 
+            host_ip = socket.gethostbyname(host_name) 
 
-            except: 
-                print("Unable to get hostname and IP address! Try again later.") 
+        except: 
+            print("\u001b[31mUnable to get hostname and IP address! Try again later.\u001b[39m")
 
-        get_Host_name_IP()
+        else:
+            print()
+            print("Hostname   : \u001b[32m" + host_name + "\u001b[39m") 
+            print("IP Address : \u001b[32m" + host_ip + "\u001b[39m") 
+            print()
 
     elif user_command == "ctext":
         print("Executed text file builder. Type 'help' to show executable commands.")
@@ -130,31 +135,34 @@ while True:
 
             if ctext_command == "help":
                 print()
-                print("add  - Creates a text file in program directory.")
-                print("mod  - Created a text file with text in program") 
+                print("add    Creates a text file in program directory.")
+                print("cls    Refreshes the screen.")
+                print("exit   Terminates text file builder.")
+                print("mod    Created a text file with text in program") 
                 print("       directory.")
-                print("exit - Terminates text file builder.")
-                print("cls  - Refreshes command window.")
                 print()
 
             elif ctext_command == "add":
                 my_file = open("New Text Document.txt","w+")
-                print("File created! Returned to home.")
+                print("File created!")
                 break
 
             elif ctext_command == "cls":
-                cls()
+                os.system('cls')
 
             elif ctext_command == "mod":
                 my_file = open("New Text Document.txt","w+")
                 my_file.write(input("Text: "))
                 my_file = open("New Text Document.txt","w+")
                 print()
-                print("File with text created successfully! Returned to home.")
+                print("File with text created successfully!")
+                break
+
+            elif ctext_command == "exit":
                 break
 
             else:
-                print("Whoa! Command not found. Type 'help' to show executable commands.")
+                print("\u001b[31mWhoa! Command not found. Type 'help' to show executable commands.\u001b[39m")
 
     elif user_command == "math":
         def add(x, y):
@@ -178,19 +186,92 @@ while True:
 
             if math_command == "help":
                 print()
-                print("add    - Adds two numbers.")
-                print("sub    - Subtracts one number with another.")
-                print("div    - Divides one number with another.")
-                print("multi  - Multiplies one number with another.")
-                print("mem    - Shows values stored in math memory.")
-                print("memcls - Clears application maemory.")
-                print("cls    - Refreshes command window.")
-                print("exit   - Quits mathematical console.")
+                print("add      Adds two numbers.")
+                print("cls      Refreshes the screen.")
+                print("cube     Cubes a number.")
+                print("div      Divides one number with another.")
+                print("exit     Quits mathematical console.")
+                print("mem      Shows values stored in math memory.")
+                print("multi    Multiplies one number with another.")
+                print("memcls   Clears application maemory.")
+                print("sq       Squares a given value.")
+                print("sub      Subtracts one number with another.")
                 print()
 
             elif math_command == "exit":
-                print("Successfully terminated mathematical console!")
                 break
+
+            elif math_command == "cube":
+                
+                if math_contval == 0:
+
+                    try:
+                        cube = float(input("Value <> "))
+                        sum = cube ** 3
+
+                    except OverflowError:
+                        print(), print("\u001b[31mResult too large to solve!\u001b[39m")
+
+                    except ValueError:
+                        print(), print("\u001b[31mValue invalid! Try again with a valid number.\u001b[39m")
+
+                    else:
+                        math_mem += sum
+                        math_contval += 1
+                        print(), print("Result = \u001b[32m" + str(sum) + "\u001b[39m (Added to memory)")
+
+                else:
+
+                    try:
+                        print("Using previous memory result for main value.")
+                        sum = math_mem ** 3
+
+                    except OverflowError:
+                        print(), print("\u001b[31mResult too large to solve!\u001b[39m")
+
+                    except ValueError:
+                        print(), print("\u001b[31mValue invalid! Try again with a valid number.\u001b[39m")
+
+                    else:
+                        math_mem -= math_mem
+                        math_mem += sum
+                        print(), print("Result = \u001b[32m" + str(sum) + "\u001b[39m (Refreshed memory)")
+
+            elif math_command == "sq":
+                
+                if math_contval == 0:
+
+                    try:
+                        sq = float(input("Value <> "))
+                        sum = sq ** 2
+
+                    except OverflowError:
+                        print(), print("\u001b[31mResult too large to solve!\u001b[39m")
+
+                    except ValueError:
+                        print(), print("\u001b[31mValue invalid! Try again with a valid number.\u001b[39m")
+
+                    else:
+                        math_mem += sum
+                        math_contval += 1
+                        print(), print("Result = \u001b[32m" + str(sum) + "\u001b[39m (Added to memory)")
+
+                else:
+
+                    try:
+                        print("Using previous memory result for main value.")
+                        sum = math_mem ** 2
+
+                    except OverflowError:
+                        print(), print("\u001b[31mResult too large to solve!\u001b[39m")
+
+                    except ValueError:
+                        print(), print("\u001b[31mValue invalid! Try again with a valid number.\u001b[39m")
+
+                    else:
+                        math_mem -= math_mem
+                        math_mem += sum
+                        print(), print("Result = \u001b[32m" + str(sum) + "\u001b[39m (Refreshed memory)")
 
             elif math_command == "mem":
                 
@@ -198,101 +279,182 @@ while True:
                     print("Mathematical memory is empty!")
 
                 else:
-                    print("Stored value: " + str(math_mem))
+                    print("Stored value: \u001b[32m" + str(math_mem) + "\u001b[39m")
 
             elif math_command == "memcls":
                 math_mem -= math_mem
                 math_contval -= math_contval
-                print("Cleared math memory.")
+                print("Cleared math memory!")
 
             elif math_command == "cls":
-                cls()
+                os.system('cls')
 
             elif math_command == "add":
 
                 if math_contval == 0:
-                    num1 = float(input("Value 1 <> "))
-                    num2 = float(input("Value 2 <> "))
-                    sum = add(num1, num2)
-                    math_mem += sum
-                    math_contval += 1
-                    print(), print("Result: " + str(sum) + " (Added to memory)")
+
+                    try:
+                        num1 = float(input("Value 1 <> "))
+                        num2 = float(input("Value 2 <> "))
+                        sum = add(num1, num2)
+
+                    except OverflowError:
+                        print(), print("\u001b[31mResult too large to solve!\u001b[39m")
+
+                    except ValueError:
+                        print(), print("\u001b[31mValue invalid! Try again with a valid number.\u001b[39m")
+
+                    else:
+                        math_mem += sum
+                        math_contval += 1
+                        print(), print("Result = \u001b[32m" + str(sum) + "\u001b[39m (Added to memory)")
 
                 else:
-                    print("Using previous memory result for main value.")
-                    print()
-                    num1 = float(input("Value <> "))
-                    sum = add(math_mem, num1)
-                    math_mem += num1
-                    print(), print("Result: " + str(sum) + " (Refreshed memory)")
+
+                    try:
+                        print("Using previous memory result for main value.")
+                        print()
+                        num1 = float(input("Value <> "))
+                        sum = add(math_mem, num1)
+                        
+
+                    except OverflowError:
+                        print(), print("\u001b[31mResult too large to solve!\u001b[39m")
+
+                    except ValueError:
+                        print(), print("\u001b[31mValue invalid! Try again with a valid number.\u001b[39m")
+
+                    else:
+                        math_mem += num1
+                        print(), print("Result = \u001b[32m" + str(sum) + "\u001b[39m (Refreshed memory)")
 
             elif math_command == "sub":
 
                 if math_contval == 0:
-                    num1 = float(input("Value 1 <> "))
-                    num2 = float(input("Value 2 <> "))
-                    sum = sub(num1, num2)
-                    math_mem += sum
-                    math_contval += 1
-                    print(), print("Result: " + str(sum) + " (Added to memory)")
+
+                    try:
+                        num1 = float(input("Value 1 <> "))
+                        num2 = float(input("Value 2 <> "))
+                        sum = sub(num1, num2)
+
+                    except OverflowError:
+                        print(), print("\u001b[31mResult too large to solve!\u001b[39m")
+
+                    except ValueError:
+                        print(), print("\u001b[31mValue invalid! Try again with a valid number.\u001b[39m")
+
+                    else:
+                        math_mem += sum
+                        math_contval += 1
+                        print(), print("Result = \u001b[32m" + str(sum) + "\u001b[39m (Added to memory)")
 
                 else:
-                    print("Using previous memory result for main value.")
-                    print()
-                    num1 = float(input("Value <> "))
-                    sum = sub(math_mem, num1)
-                    math_mem -= num1
-                    print(), print("Result: " + str(sum) + " (Refreshed memory)")
+
+                    try:
+                        print("Using previous memory result for main value.")
+                        print()
+                        num1 = float(input("Value <> "))
+                        sum = sub(math_mem, num1)
+
+                    except OverflowError:
+                        print(), print("\u001b[31mResult too large to solve!\u001b[39m")
+
+                    except ValueError:
+                        print(), print("\u001b[31mValue invalid! Try again with a valid number.\u001b[39m")
+
+                    else:
+                        math_mem -= num1
+                        print(), print("Result = \u001b[32m" + str(sum) + "\u001b[39m (Refreshed memory)")
 
             elif math_command == "div":
 
                 if math_contval == 0:
-                    num1 = float(input("Value 1 <> "))
-                    num2 = float(input("Value 2 <> "))
-                    sum = div(num1, num2)
-                    math_mem += sum
-                    math_contval += 1
-                    print(), print("Result: " + str(sum) + " (Added to memory)")
+
+                    try:
+                        num1 = float(input("Value 1 <> "))
+                        num2 = float(input("Value 2 <> "))
+                        sum = div(num1, num2)
+
+                    except OverflowError:
+                        print(), print("\u001b[31mResult too large to solve!\u001b[39m")
+
+                    except ValueError:
+                        print(), print("\u001b[31mValue invalid! Try again with a valid number.\u001b[39m")
+
+                    else:
+                        math_mem += sum
+                        math_contval += 1
+                        print(), print("Result = \u001b[32m" + str(sum) + "\u001b[39m (Added to memory)")
 
                 else:
-                    print("Using previous memory result for main value.")
-                    print()
-                    num1 = float(input("Value <> "))
-                    sum = div(math_mem, num1)
-                    math_mem /= num1
-                    print(), print("Result: " + str(sum) + " (Refreshed memory)")
+
+                    try:
+                        print("Using previous memory result for main value.")
+                        print()
+                        num1 = float(input("Value <> "))
+                        sum = div(math_mem, num1)
+
+                    except OverflowError:
+                        print(), print("\u001b[31mResult too large to solve!\u001b[39m")
+
+                    except ValueError:
+                        print(), print("\u001b[31mValue invalid! Try again with a valid number.\u001b[39m")
+
+                    else:
+                        math_mem /= num1
+                        print(), print("Result = \u001b[32m" + str(sum) + "\u001b[39m (Refreshed memory)")
 
             elif math_command == "multi":
 
                 if math_contval == 0:
-                    num1 = float(input("Value 1 <> "))
-                    num2 = float(input("Value 2 <> "))
-                    sum = multi(num1, num2)
-                    math_mem += sum
-                    math_contval += 1
-                    print(), print("Result: " + str(sum) + " (Refreshed memory)")
+
+                    try:
+                        num1 = float(input("Value 1 <> "))
+                        num2 = float(input("Value 2 <> "))
+                        sum = multi(num1, num2)
+
+                    except OverflowError:
+                        print(), print("\u001b[31mResult too large to solve!\u001b[39m")
+
+                    except ValueError:
+                        print(), print("\u001b[31mValue invalid! Try again with a valid number.\u001b[39m")
+
+                    else:
+                        math_mem += sum
+                        math_contval += 1
+                        print(), print("Result = \u001b[32m" + str(sum) + "\u001b[39m (Added to memory)")
 
                 else:
-                    print("Using previous memory result for main value.")
-                    print()
-                    num1 = float(input("Value <> "))
-                    sum = multi(math_mem, num1)
-                    math_mem *= num1
-                    print(), print("Result: " + str(sum) + " (Refreshed memory)")
+
+                    try:
+                        print("Using previous memory result for main value.")
+                        print()
+                        num1 = float(input("Value <> "))
+                        sum = multi(math_mem, num1)
+
+                    except OverflowError:
+                        print(), print("\u001b[31mResult too large to solve!\u001b[39m")
+
+                    except ValueError:
+                        print(), print("\u001b[31mValue invalid! Try again with a valid number.\u001b[39m")
+
+                    else:
+                        math_mem *= num1
+                        print(), print("Result = \u001b[32m" + str(sum) + "\u001b[39m (Refreshed memory)")
 
             else:
-                print("Whoa! Command not found! Try typing 'help' to show executable commands.")
+                print("\u001b[31mWhoa! Command not found. Type 'help' to show executable commands.\u001b[39m")
 
     elif user_command == "speak":
-        text_to_speech = input("Text to speak: ")
-        S.Speak(text_to_speech)
+        speechtext = input("Text to speak: ")
+        S.Speak(speechtext)
 
     elif user_command == "clock":
         now = datetime.now()
-        dt_string = now.strftime("Date: " + "%d/%m/%Y" + " | Time: " + "%H:%M:%S")
-        print(dt_string)
+        date_time = now.strftime("Date: " + "%d/%m/%Y" + " | Time: " + "%H:%M:%S")
+        print(date_time)
 
-    elif user_command == "web":
+    elif user_command == "webent":
         print("Executed web console! Type 'help' to show executable commands.")
 
         while True:
@@ -302,36 +464,35 @@ while True:
 
             if webcommand == "help":
                 print()
-                print("csite - Opens a custom webpage given by user.")
-                print("sites - Shows a list of popular sites to open.")
-                print("cls   - Refreshes command window.")
-                print("exit  - Closes web console.")
+                print("cls      Refreshes the screen.")
+                print("csite    Opens a custom webpage given by user.")
+                print("exit     Closes web console.")
+                print("sites    Shows a list of popular sites to open.")
                 print()
 
             elif webcommand == "csite":
                 website = input("Website link / URL: ")
                 webbrowser.open(website, new=2)
-                print("Web page opened successfully! Returned to home.")
+                print("Web page opened successfully! ")
                 break
 
             elif webcommand == "exit":
-                print("Successfully terminated web console!")
                 break
 
             elif webcommand == "cls":
-                cls()
+                os.system('cls')
 
             elif webcommand == "sites":
                 while True:
                     print()
                     print("Enter site number in-line to open.")
                     print()
-                    print("1. YouTube")
-                    print("2. Facebook")
-                    print("3. Wikipedia")
-                    print("4. Google")
-                    print("5. LinkedIn")
-                    print("6. GitHub")
+                    print("1 YouTube")
+                    print("2 Facebook")
+                    print("3 Wikipedia")
+                    print("4 Google")
+                    print("5 LinkedIn")
+                    print("6 GitHub")
                     print()
 
                     sites_execute = input("Web/Sites> ")
@@ -367,13 +528,19 @@ while True:
                         break
 
                     else:
-                        print("Website didn't found in list, try again!")
+                        print("\u001b[31mWebsite didn't found in list, try again!\u001b[39m")
 
             else:
-                print("Whoa! Command not found. Try typing 'help' to show executable commands.")
+                print("\u001b[31mWhoa! Command not found. Type 'help' to show executable commands.\u001b[39m")
 
     elif user_command == "cls":
-        cls()
+        os.system('cls')
+
+    elif user_command == "crdir":
+        dir_name = input("Directory name: ")
+        print()
+        os.mkdir(dir_name)
+        print("Directory created successfully!")
 
     elif user_command == "del":
         while True:
@@ -382,14 +549,15 @@ while True:
 
             if filetype == "help":
                 print()
-                print("dir  - Assigns file as directory.")
-                print("doc  - Assigns file as document.")
-                print("cls  - Refreshes command window.")
-                print("exit - Returns to home.")
+                print("cls    Refreshes the screen.")
+                print("dir    Assigns file type as directory.")
+                print("doc    Assigns file type as document.")
+                print("exit   Returns to home.")
+                print()
                 print()
 
             elif filetype == "cls":
-                cls()
+                os.system('cls')
 
             elif filetype == "dir":
                 mydir = input("Directory path: ")
@@ -397,11 +565,11 @@ while True:
 
                 try:
                     shutil.rmtree(mydir)
-                    print("Deleted directory successfully! Returned to home.")
+                    print("Deleted directory successfully!")
                     break
 
-                except OSError as e:
-                    print("Directory not found, try again.")
+                except OSError:
+                    print("\u001b[31mDirectory not found, try again.\u001b[39m")
                     print()
 
             elif filetype == "doc":
@@ -410,29 +578,28 @@ while True:
 
                 if os.path.isfile(mydoc):
                     os.remove(mydoc)
-                    print("Deleted file successfully! Returned to home.")
+                    print("Deleted file successfully!")
                     break
 
                 else:
-                    print("File not found, try again.")
+                    print("\u001b[31mFile not found, try again.\u001b[39m")
                     print()
 
             elif filetype == "exit":
-                print("Successfully returned to home.")
                 break
 
             else:
-                print("File type / command not recognized! Type 'help' to show executable commands.")
+                print("\u001b[31mFile type / command not recognized! Type 'help' to show executable commands.\u001b[39m")
 
     elif user_command == "device":
         print()
-        print("Device platform  : " + device_platform)
-        print("Chipset          : " + processor)
-        print("Operating system : " + operating_system)
-        print("Build            : " + build)
+        print("Device platform  : \u001b[32m" + device_platform + "\u001b[39m")
+        print("Chipset          : \u001b[32m" + processor + "\u001b[39m")
+        print("Operating system : \u001b[32m" + operating_system + "\u001b[39m")
+        print("Build            : \u001b[32m" + build + "\u001b[39m")
         print()
 
-    elif user_command == "ytdl":
+    elif user_command == "vdl":
 
         while True:
             def dwl_vid():
@@ -445,18 +612,21 @@ while True:
 
                 try:
                     ydl_opts = {}
-                    link_of_the_video = input("Video link / URL: ")
                     print()
-                    vidmain = link_of_the_video.strip()
+                    vidlink = input("Video link / URL: ")
+                    print()
+                    vidmain = vidlink.strip()
                     dwl_vid()
-                    print()
-                    print("Done! Returned to home.")
-                    break
 
                 except:
                     print()
-                    print("Invalid link! Try again with a valid video link / URL.")
+                    print("\u001b[31mInvalid link! Try again with a valid video link / URL.\u001b[39m")
                     print()
+
+                else:
+                    print()
+                    print("Done! ")
+                    break
 
             elif vidformat == "audio":
 
@@ -471,25 +641,27 @@ while True:
                     }
 
                     print()
-                    link_of_the_video = input("Video link / URL: ")
+                    vidlink = input("Video link / URL: ")
                     print()
-                    vidmain = link_of_the_video.strip()
+                    vidmain = vidlink.strip()
                     dwl_vid()
-                    print()
-                    print("Done! Returned to home.")
-                    break
                 
                 except:
                     print()
-                    print("Invalid link! Try again with a valid video link / URL.")
+                    print("\u001b[31mInvalid link! Try again with a valid video link / URL.\u001b[39m")
                     print()
+
+                else:
+                    print()
+                    print("Done! ")
+                    break
 
             elif vidformat == "exit":
                 break
 
             else:
-                print("Format not recognised! Type either video or audio for format selection.")
+                print("\u001b[31mFormat not recognised! Type either video or audio for format selection.\u001b[39m")
                 print()
 
     else:
-        print("Whoa! Command not found. Try typing 'help' to show executable commands.")
+        print("\u001b[31mWhoa! Command not found. Type 'help' to show executable commands.\u001b[39m")
