@@ -4,13 +4,12 @@
 print("This will take a few moments...")
 
 # Program variables.
-Version = "1.3"
+Version = "1.31M"
 Patch_Date = "16.07.2020 July"
 License = "(c) 2020 Anindya Shiddhartha. All rights reserved."
 
-# Mathematical variables.
+# Mathematical memory variable.
 math_mem =0
-math_contval =0
 
 # Modules to use!
 import time
@@ -46,35 +45,29 @@ build = platform.version()
 # Main interface is written below.
 os.system('cls')
 print("BlastShell | Type 'help' or 'about' for more information.")
-print(License)
-print()
+print(License), print()
 
 while True:
+
     print("\u001b[0m")
-    user_command = input(dir_path + ">\u001b[36m ")
+    user_command = input(dir_path + "> \u001b[36m")
     print("\u001b[0m")
 
     if (user_command == "about" or user_command == "ABOUT"):
-        print()
-        print("\033[1;34mBlastShell\u001b[0m | Version: " + Version)
+        print(), print("\033[1;34mBlastShell\u001b[0m | Version: " + Version)
         print("Last updated on " + Patch_Date)
-        print("Licensed under MIT; Copyright " + License)
-        print()
+        print("Licensed under MIT; Copyright " + License), print()
         print("An easy-to-use interactive command line interface / shell developed mainly")
         print("for solving complex mathematical problems and for accomplishing day-to-day")
         print("tasks. BlastShell has a handful of useful commands available inside it, so")
         print("that users can use this application freely, without having to use internet")
-        print("connection.")
-        print()
+        print("connection."), print()
         print("BlastShell gets updated frequently in order to maintain stable experience,")
-        print("and also to introduce new commands and features to the users of it.")
-        print()
-        print("Reach / Support: hitblastofficial@gmail.com")
-        print("\u001b[0m")
+        print("and also to introduce new commands and features to the users of it."), print()
+        print("Reach / Support: hitblastofficial@gmail.com"), print()
 
     elif (user_command == "help" or user_command == "HELP"):
-        print()
-        print("CLS        Refreshes the screen.")
+        print(), print("CLS        Refreshes the screen.")
         print("CLOCK      Displays current date and time.")
         print("CRDIR      Creates a directory in current working directory.")
         print("CTEXT      Executes text file builder which enables user to create & modify")
@@ -91,8 +84,7 @@ while True:
         print("VDL        Downloads a specific video from YouTube as well as from")
         print("           other destinations when executed. (as video/audio)")
         print("WEBENT     Enables console to enter specific or custom")
-        print("           websites.")
-        print()
+        print("           websites."), print()
 
     elif (user_command == "exit" or user_command == "EXIT"):
         print("Closing shell...")
@@ -148,10 +140,8 @@ while True:
             print("\u001b[31mUnable to get hostname and IP address! Try again later.\u001b[0m")
 
         else:
-            print()
-            print("Hostname   : \u001b[32m" + host_name + "\u001b[0m") 
-            print("IP Address : \u001b[32m" + host_ip + "\u001b[0m") 
-            print()
+            print(), print("Hostname   : \u001b[32m" + host_name + "\u001b[0m") 
+            print("IP Address : \u001b[32m" + host_ip + "\u001b[0m"), print() 
 
     elif (user_command == "ctext" or user_command == "CTEXT"):
         print("Executed text file builder. Type 'help' to show executable commands.")
@@ -161,14 +151,11 @@ while True:
             ctext_command = input("Text Builder> ")
 
             if (ctext_command == "help" or ctext_command == "HELP"):
-                print()
-                print()
-                print("CRT    Creates a text file in program directory.")
+                print(), print(), print("CRT    Creates a text file in program directory.")
                 print("CLS    Refreshes the screen.")
                 print("EXIT   Terminates text file builder.")
                 print("MOD    Created a text file with text in program") 
-                print("       directory.")
-                print()
+                print("       directory."), print()
 
             elif (ctext_command == "crt" or ctext_command == "CRT"):
                 my_file = open("New Text Document.txt","w+")
@@ -192,27 +179,6 @@ while True:
                 print("\u001b[31mWhoa! Command not found. Type 'help' to show executable commands.\u001b[0m")
 
     elif (user_command == "math" or user_command == "MATH"):
-        def add(x, y):
-            return x + y
-
-        def sub(x, y):
-            return x - y
-
-        def div(x, y):
-            return x / y
-
-        def multi(x, y):
-            return x * y
-
-        def sq(x):
-            return x ** 2
-
-        def xq(x, y):
-            return x ** y
-
-        def cube(x):
-            return x ** 3
-
         print("Mathematical console enabled. Type 'help' to show executable commands.")
 
         while True:
@@ -220,9 +186,7 @@ while True:
             math_command = input("Math> ")
 
             if (math_command == "help" or math_command == "HELP"):
-                print()
-                print()
-                print("ADD        Adds two numbers.")
+                print(), print(), print("ADD        Adds two numbers.")
                 print("CLS        Refreshes the screen.")
                 print("CUBE       Cubes a number.")
                 print("DIV        Divides one number with another.")
@@ -231,21 +195,50 @@ while True:
                 print("MULTI      Multiplies one number with another.")
                 print("NUMFRAQ    Converts a decimal number to a fraction.")
                 print("PI         Adds the value of pi to memory.")
+                print("PROFLOSS   Detects profit or loss by using purchase and selling value.")
                 print("MEMCLS     Clears application maemory.")
                 print("SQ         Squares a given value.")
                 print("SUB        Subtracts one number with another.")
-                print("XQ         Modify a number with a to-the-power value.")
-                print()
+                print("XQ         Modify a number with a to-the-power value."), print()
 
             elif (math_command == "exit" or math_command == "EXIT"):
                 break
 
+            elif (math_command == "profloss" or math_command == "PROFLOSS"):
+
+                try:
+                    buy_value = float(input("Purchase Value <> "))
+                    sell_value = float(input("Selling Value <> "))
+
+                    if buy_value < sell_value:
+                        sell_value -= buy_value
+                        profloss_value = sell_value / buy_value * 100
+                        output_type = ("Profit \u001b[32m")
+
+                    elif buy_value > sell_value:
+                        buy_value -= sell_value
+                        profloss_value = buy_value / sell_value * 100
+                        output_type = ("Loss \u001b[31m")
+
+                    else:
+                        buy_value -= sell_value
+                        profloss_value = buy_value / sell_value * 100
+                        output_type = ("None \u001b[32m")
+
+                except ValueError:
+                    print("\u001b[31mValue invalid! Try again with a valid number.\u001b[0m")
+
+                except OverflowError:
+                    print("\u001b[31mResult too large to solve!\u001b[0m")
+
+                else:
+                    print("Result = " + output_type + "(" + str(profloss_value) + "%) \u001b[0m")
+
             elif (math_command == "pi" or math_command == "PI"):
                 pi_value = 3.1415926535897932384626433832
 
-                if math_contval == 0:
+                if math_mem == 0:
                     math_mem += pi_value
-                    math_contval += 1
                     print("Pi = \u001b[32m" + str(pi_value) + "\u001b[0m (Added to memory)")
 
                 else:
@@ -258,7 +251,7 @@ while True:
                             math_mem += pi_value
 
                         except OverflowError:
-                            print("\u001b[31mMemory overload!")
+                            print("\u001b[31mMemory overload!\u001b[0m")
 
                         else:
                             print("Result = \u001b[32m" + str(math_mem) + "\u001b[0m (Refreshed memory)")
@@ -269,7 +262,7 @@ while True:
                             math_mem -= pi_value
 
                         except OverflowError:
-                            print("\u001b[31mMemory overload!")
+                            print("\u001b[31mMemory overload!\u001b[0m")
 
                         else:
                             print("Result = \u001b[32m" + str(math_mem) + "\u001b[0m (Refreshed memory)")
@@ -301,7 +294,7 @@ while True:
 
             elif (math_command == "numfraq" or math_command == "NUMFRAQ"):
 
-                if math_contval == 0:
+                if math_mem == 0:
 
                     try:
                         convfraq_num = float(input("Value <> "))
@@ -327,10 +320,12 @@ while True:
                     else:
                         print("Fraction = \u001b[32m" + str(convfraq_num) + "\u001b[0m")
 
-
             elif (math_command == "xq" or math_command == "XQ"):
+
+                def xq(x, y):
+                    return x ** y
                 
-                if math_contval == 0:
+                if math_mem == 0:
 
                     try:
                         xq_num1 = float(input("Primary Value <> "))
@@ -345,7 +340,6 @@ while True:
 
                     else:
                         math_mem += sum
-                        math_contval += 1
                         print("Result = \u001b[32m" + str(sum) + "\u001b[0m (Added to memory)")
 
                 else:
@@ -367,8 +361,11 @@ while True:
                         print("Result = \u001b[32m" + str(sum) + "\u001b[0m (Refreshed memory)")
 
             elif (math_command == "cube" or math_command == "CUBE"):
+
+                def cube(x):
+                    return x ** 3
                 
-                if math_contval == 0:
+                if math_mem == 0:
 
                     try:
                         cube_input = float(input("Value <> "))
@@ -382,7 +379,6 @@ while True:
 
                     else:
                         math_mem += sum
-                        math_contval += 1
                         print("Result = \u001b[32m" + str(sum) + "\u001b[0m (Added to memory)")
 
                 else:
@@ -400,8 +396,11 @@ while True:
                         print("Result = \u001b[32m" + str(sum) + "\u001b[0m (Refreshed memory)")
 
             elif (math_command == "sq" or math_command == "SQ"):
+
+                def sq(x):
+                    return x ** 2
                 
-                if math_contval == 0:
+                if math_mem == 0:
 
                     try:
                         sq_input = float(input("Value <> "))
@@ -415,7 +414,6 @@ while True:
 
                     else:
                         math_mem += sum
-                        math_contval += 1
                         print("Result = \u001b[32m" + str(sum) + "\u001b[0m (Added to memory)")
 
                 else:
@@ -442,7 +440,6 @@ while True:
 
             elif (math_command == "memcls" or math_command == "MEMCLS"):
                 math_mem -= math_mem
-                math_contval -= math_contval
                 print("\u001b[32mCleared math memory!\u001b[0m")
 
             elif (math_command == "cls" or math_command == "CLS"):
@@ -450,7 +447,10 @@ while True:
 
             elif (math_command == "add" or math_command == "ADD"):
 
-                if math_contval == 0:
+                def add(x, y):
+                    return x + y
+
+                if math_mem == 0:
 
                     try:
                         num1 = float(input("Value 1 <> "))
@@ -465,7 +465,6 @@ while True:
 
                     else:
                         math_mem += sum
-                        math_contval += 1
                         print("Result = \u001b[32m" + str(sum) + "\u001b[0m (Added to memory)")
 
                 else:
@@ -483,12 +482,16 @@ while True:
                         print("\u001b[31mValue invalid! Try again with a valid number.\u001b[0m")
 
                     else:
-                        math_mem += num1
+                        math_mem -= math_mem
+                        math_mem += sum
                         print("Result = \u001b[32m" + str(sum) + "\u001b[0m (Refreshed memory)")
 
             elif (math_command == "sub" or math_command == "SUB"):
 
-                if math_contval == 0:
+                def sub(x, y):
+                    return x - y
+
+                if math_mem == 0:
 
                     try:
                         num1 = float(input("Value 1 <> "))
@@ -503,7 +506,6 @@ while True:
 
                     else:
                         math_mem += sum
-                        math_contval += 1
                         print("Result = \u001b[32m" + str(sum) + "\u001b[0m (Added to memory)")
 
                 else:
@@ -520,12 +522,16 @@ while True:
                         print("\u001b[31mValue invalid! Try again with a valid number.\u001b[0m")
 
                     else:
-                        math_mem -= num1
+                        math_mem -= math_mem
+                        math_mem += sum
                         print("Result = \u001b[32m" + str(sum) + "\u001b[0m (Refreshed memory)")
 
             elif (math_command == "div" or math_command == "DIV"):
 
-                if math_contval == 0:
+                def div(x, y):
+                    return x / y
+
+                if math_mem == 0:
 
                     try:
                         num1 = float(input("Value 1 <> "))
@@ -540,7 +546,6 @@ while True:
 
                     else:
                         math_mem += sum
-                        math_contval += 1
                         print("Result = \u001b[32m" + str(sum) + "\u001b[0m (Added to memory)")
 
                 else:
@@ -557,12 +562,16 @@ while True:
                         print("\u001b[31mValue invalid! Try again with a valid number.\u001b[0m")
 
                     else:
-                        math_mem /= num1
+                        math_mem -= math_mem
+                        math_mem += sum
                         print("Result = \u001b[32m" + str(sum) + "\u001b[0m (Refreshed memory)")
 
             elif (math_command == "multi" or math_command == "MULTI"):
 
-                if math_contval == 0:
+                def multi(x, y):
+                    return x * y
+
+                if math_mem == 0:
 
                     try:
                         num1 = float(input("Value 1 <> "))
@@ -577,7 +586,6 @@ while True:
 
                     else:
                         math_mem += sum
-                        math_contval += 1
                         print("Result = \u001b[32m" + str(sum) + "\u001b[0m (Added to memory)")
 
                 else:
@@ -594,7 +602,8 @@ while True:
                         print("\u001b[31mValue invalid! Try again with a valid number.\u001b[0m")
 
                     else:
-                        math_mem *= num1
+                        math_mem -= math_mem
+                        math_mem += sum
                         print("Result = \u001b[32m" + str(sum) + "\u001b[0m (Refreshed memory)")
 
             else:
@@ -617,13 +626,10 @@ while True:
             webcommand = input("Web> ")
 
             if (webcommand == "help" or webcommand == "HELP"):
-                print()
-                print()
-                print("CLS      Refreshes the screen.")
+                print(), print(), print("CLS      Refreshes the screen.")
                 print("CSITE    Opens a custom webpage given by user.")
                 print("EXIT     Closes web console.")
-                print("SITES    Shows a list of popular sites to open.")
-                print()
+                print("SITES    Shows a list of popular sites to open."), print()
 
             elif (webcommand == "csite" or webcommand == "CSITE"):
                 website = input("Website link / URL: ")
@@ -640,18 +646,13 @@ while True:
             elif (webcommand == "sites" or webcommand == "SITES"):
 
                 while True:
-                    print()
-                    print()
-                    print("Enter site number in-line to open.")
-                    print()
+                    print(), print(), print("Enter site number in-line to open.")
                     print("1  YouTube")
                     print("2  Facebook")
                     print("3  Wikipedia")
                     print("4  Google")
                     print("5  LinkedIn")
-                    print("6  GitHub")
-                    print()
-                    print()
+                    print("6  GitHub"), print(), print()
 
                     sites_execute = input("Web/Sites> ")
 
@@ -705,14 +706,10 @@ while True:
             filetype = input("File type ('help' for commands): ")
 
             if (filetype == "help" or filetype == "HELP"):
-                print()
-                print()
-                print("CLS    Refreshes the screen.")
+                print(), print(), print("CLS    Refreshes the screen.")
                 print("DIR    Assigns file type as directory.")
                 print("DOC    Assigns file type as document.")
-                print("EXIT   Returns to home.")
-                print()
-                print()
+                print("EXIT   Returns to home."), print(), print()
 
             elif (filetype == "cls" or filetype == "CLS"):
                 os.system('cls')
@@ -746,13 +743,10 @@ while True:
                 print("\u001b[31mFile type / command not recognized! Type 'help' to show executable commands.\u001b[0m")
 
     elif (user_command == "sys" or user_command == "SYS"):
-        print()
-        print()
-        print("Device platform  : \u001b[32m" + device_platform + "\u001b[0m")
+        print(), print(), print("Device platform  : \u001b[32m" + device_platform + "\u001b[0m")
         print("Chipset          : \u001b[32m" + processor + "\u001b[0m")
         print("Operating system : \u001b[32m" + operating_system + "\u001b[0m")
-        print("Build            : \u001b[32m" + build + "\u001b[0m")
-        print()
+        print("Build            : \u001b[32m" + build + "\u001b[0m"), print()
 
     elif (user_command == "vdl" or user_command == "VDL"):
 
