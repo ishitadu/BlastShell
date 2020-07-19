@@ -4,8 +4,8 @@
 print("This will take a few moments...")
 
 # Program variables.
-Version = "1.31M"
-Patch_Date = "16.07.2020 July"
+Version = "1.32M"
+Patch_Date = "20.07.2020 July"
 License = "(c) 2020 Anindya Shiddhartha. All rights reserved."
 
 # Mathematical memory variable.
@@ -45,29 +45,27 @@ build = platform.version()
 # Main interface is written below.
 os.system('cls')
 print("BlastShell | Type 'help' or 'about' for more information.")
-print(License), print()
+print(License + "\n")
 
 while True:
 
-    print("\u001b[0m")
-    user_command = input(dir_path + "> \u001b[36m")
-    print("\u001b[0m")
+    user_command = input("\u001b[0m\n" + dir_path + "> \u001b[36m")
 
     if (user_command == "about" or user_command == "ABOUT"):
-        print(), print("\033[1;34mBlastShell\u001b[0m | Version: " + Version)
+        print("\n\n\033[1;34mBlastShell\u001b[0m | Version: " + Version)
         print("Last updated on " + Patch_Date)
-        print("Licensed under MIT; Copyright " + License), print()
-        print("An easy-to-use interactive command line interface / shell developed mainly")
+        print("Licensed under MIT; Copyright " + License)
+        print("\nAn easy-to-use interactive command line interface / shell developed mainly")
         print("for solving complex mathematical problems and for accomplishing day-to-day")
         print("tasks. BlastShell has a handful of useful commands available inside it, so")
         print("that users can use this application freely, without having to use internet")
-        print("connection."), print()
-        print("BlastShell gets updated frequently in order to maintain stable experience,")
-        print("and also to introduce new commands and features to the users of it."), print()
-        print("Reach / Support: hitblastofficial@gmail.com"), print()
+        print("connection.")
+        print("\nBlastShell gets updated frequently in order to maintain stable experience,")
+        print("and also to introduce new commands and features to the users of it.")
+        print("\nReach / Support: hitblastofficial@gmail.com\n")
 
     elif (user_command == "help" or user_command == "HELP"):
-        print(), print("CLS        Refreshes the screen.")
+        print("\u001b[0m\n\nCLS        Refreshes the screen.")
         print("CLOCK      Displays current date and time.")
         print("CRDIR      Creates a directory in current working directory.")
         print("CTEXT      Executes text file builder which enables user to create & modify")
@@ -83,15 +81,15 @@ while True:
         print("SHUTDOWN   Turns off device.")
         print("VDL        Downloads a specific video from YouTube as well as from")
         print("           other destinations when executed. (as video/audio)")
-        print("WEBENT     Enables console to enter specific or custom")
-        print("           websites."), print()
+        print("WEB        Enables console to enter specific or custom")
+        print("           websites.\n")
 
     elif (user_command == "exit" or user_command == "EXIT"):
-        print("Closing shell...")
+        print("\u001b[0mClosing shell...")
         break 
 
     elif (user_command == "shutdown" or user_command == "SHUTDOWN"):
-        shutdown_confirm = input("Confirm device shutdown? (yes/no): ")
+        shutdown_confirm = input("\u001b[0mConfirm device shutdown? (yes/no): ")
 
         if (shutdown_confirm == "yes" or shutdown_confirm == "YES"):
             print("\u001b[32mShutting down...\u001b[0m")
@@ -104,7 +102,7 @@ while True:
             print("\u001b[31mCommand not found! Try typing 'yes' or 'no'.\u001b[0m")
 
     elif (user_command == "restart" or user_command == "RESTART"):
-        restart_confirm = input("Confirm device restart? (yes/no): ")
+        restart_confirm = input("\u001b[0mConfirm device restart? (yes/no): ")
 
         if (restart_confirm == "yes" or restart_confirm == "YES"):
             print("\u001b[32mRestarting...\u001b[0m")
@@ -116,9 +114,8 @@ while True:
         else:
             print("\u001b[31mCommand not found! Try typing 'yes' or 'no'.")
 
-
     elif (user_command == "setcd" or user_command == "SETCD"):
-        dir_path = input("Path: ")
+        dir_path = input("\u001b[0mPath: ")
 
         try:
             os.chdir(dir_path)
@@ -140,22 +137,21 @@ while True:
             print("\u001b[31mUnable to get hostname and IP address! Try again later.\u001b[0m")
 
         else:
-            print(), print("Hostname   : \u001b[32m" + host_name + "\u001b[0m") 
-            print("IP Address : \u001b[32m" + host_ip + "\u001b[0m"), print() 
+            print("\u001b[0m\n\nHostname   : \u001b[32m" + host_name + "\u001b[0m") 
+            print("IP Address : \u001b[32m" + host_ip + "\u001b[0m\n") 
 
     elif (user_command == "ctext" or user_command == "CTEXT"):
-        print("Executed text file builder. Type 'help' to show executable commands.")
+        print("\u001b[0mExecuted text file builder. Type 'help' to show executable commands.")
 
         while True:
-            print()
-            ctext_command = input("Text Builder> ")
+            ctext_command = input("\nText Builder> ")
 
             if (ctext_command == "help" or ctext_command == "HELP"):
-                print(), print(), print("CRT    Creates a text file in program directory.")
+                print("\n\nCRT    Creates a text file in program directory.")
                 print("CLS    Refreshes the screen.")
                 print("EXIT   Terminates text file builder.")
                 print("MOD    Created a text file with text in program") 
-                print("       directory."), print()
+                print("       directory.\n")
 
             elif (ctext_command == "crt" or ctext_command == "CRT"):
                 my_file = open("New Text Document.txt","w+")
@@ -179,14 +175,13 @@ while True:
                 print("\u001b[31mWhoa! Command not found. Type 'help' to show executable commands.\u001b[0m")
 
     elif (user_command == "math" or user_command == "MATH"):
-        print("Mathematical console enabled. Type 'help' to show executable commands.")
+        print("\u001b[0mMathematical console enabled. Type 'help' to show executable commands.")
 
         while True:
-            print()
-            math_command = input("Math> ")
+            math_command = input("\nMath> ")
 
             if (math_command == "help" or math_command == "HELP"):
-                print(), print(), print("ADD        Adds two numbers.")
+                print("\n\nADD        Adds two numbers.")
                 print("CLS        Refreshes the screen.")
                 print("CUBE       Cubes a number.")
                 print("DIV        Divides one number with another.")
@@ -199,7 +194,7 @@ while True:
                 print("MEMCLS     Clears application maemory.")
                 print("SQ         Squares a given value.")
                 print("SUB        Subtracts one number with another.")
-                print("XQ         Modify a number with a to-the-power value."), print()
+                print("XQ         Modify a number with a to-the-power value.\n")
 
             elif (math_command == "exit" or math_command == "EXIT"):
                 break
@@ -610,32 +605,38 @@ while True:
                 print("\u001b[31mWhoa! Command not found. Type 'help' to show executable commands.\u001b[0m")
 
     elif (user_command == "speak" or user_command == "SPEAK"):
-        speechtext = input("Text to speak: ")
+        speechtext = input("\u001b[0mText to speak: ")
         S.Speak(speechtext)
 
     elif (user_command == "clock" or user_command == "CLOCK"):
         now = datetime.now()
-        date_time = now.strftime("Date: " + "%d/%m/%Y" + " | Time: " + "%H:%M:%S")
+        date_time = now.strftime("\u001b[0mDate: " + "%d/%m/%Y" + " | Time: " + "%H:%M:%S")
         print(date_time)
 
-    elif (user_command == "webent" or user_command == "WEBENT"):
-        print("Executed web console! Type 'help' to show executable commands.")
+    elif (user_command == "web" or user_command == "WEB"):
+        print("\u001b[0mExecuted web console! Type 'help' to show executable commands.")
 
         while True:
-            print()
-            webcommand = input("Web> ")
+            webcommand = input("\nWeb> ")
 
             if (webcommand == "help" or webcommand == "HELP"):
-                print(), print(), print("CLS      Refreshes the screen.")
+                print("\n\nCLS      Refreshes the screen.")
                 print("CSITE    Opens a custom webpage given by user.")
                 print("EXIT     Closes web console.")
-                print("SITES    Shows a list of popular sites to open."), print()
+                print("SEARCH   Searches the web for a particular object given by user.")
+                print("SITES    Shows a list of popular sites to open.\n")
 
             elif (webcommand == "csite" or webcommand == "CSITE"):
                 website = input("Website link / URL: ")
                 webbrowser.open(website, new=2)
                 print("\u001b[32mWeb page opened successfully!\u001b[0m")
                 break
+
+            elif (webcommand == "search" or webcommand == "SEARCH"):
+                search_topic = input("Search for: ")
+                website = "https://www.google.com/search?q=" + search_topic
+                webbrowser.open(website, new=2)
+                print("Showing results found for \u001b[32m'" + search_topic + "'\u001b[0m.")
 
             elif (webcommand == "exit" or webcommand == "EXIT"):
                 break
@@ -645,49 +646,48 @@ while True:
 
             elif (webcommand == "sites" or webcommand == "SITES"):
 
-                while True:
-                    print(), print(), print("Enter site number in-line to open.")
-                    print("1  YouTube")
-                    print("2  Facebook")
-                    print("3  Wikipedia")
-                    print("4  Google")
-                    print("5  LinkedIn")
-                    print("6  GitHub"), print(), print()
+                print("\n\nEnter site number in-line to open.\n")
+                print("1  YouTube")
+                print("2  Facebook")
+                print("3  Wikipedia")
+                print("4  Google")
+                print("5  LinkedIn")
+                print("6  GitHub\n\n")
 
-                    sites_execute = input("Web/Sites> ")
+                sites_execute = input("Web/Sites> ")
 
-                    if sites_execute == "1":
-                        webbrowser.open('www.youtube.com', new=2)
-                        print("\u001b[32mWeb page opened successfully! Returned to web console.\u001b[0m")
-                        break
+                if sites_execute == "1":
+                    webbrowser.open('www.youtube.com', new=2)
+                    print("\u001b[32mWeb page opened successfully! Returned to web console.\u001b[0m")
+                    break
 
-                    elif sites_execute == "2":
-                        webbrowser.open('www.facebook.com', new=2)
-                        print("\u001b[32mWeb page opened successfully! Returned to web console.\u001b[0m")
-                        break
+                elif sites_execute == "2":
+                    webbrowser.open('www.facebook.com', new=2)
+                    print("\u001b[32mWeb page opened successfully! Returned to web console.\u001b[0m")
+                    break
 
-                    elif sites_execute == "3":
-                        webbrowser.open('www.wikipedia.org', new=2)
-                        print("\u001b[32mWeb page opened successfully! Returned to web console.\u001b[0m")
-                        break
+                elif sites_execute == "3":
+                    webbrowser.open('www.wikipedia.org', new=2)
+                    print("\u001b[32mWeb page opened successfully! Returned to web console.\u001b[0m")
+                    break
 
-                    elif sites_execute == "4":
-                        webbrowser.open('www.google.com', new=2)
-                        print("\u001b[32mWeb page opened successfully! Returned to web console.\u001b[0m")
-                        break
+                elif sites_execute == "4":
+                    webbrowser.open('www.google.com', new=2)
+                    print("\u001b[32mWeb page opened successfully! Returned to web console.\u001b[0m")
+                    break
 
-                    elif sites_execute == "5":
-                        webbrowser.open('www.linkedin.com', new=2)
-                        print("\u001b[32mWeb page opened successfully! Returned to web console.\u001b[0m")
-                        break
+                elif sites_execute == "5":
+                    webbrowser.open('www.linkedin.com', new=2)
+                    print("\u001b[32mWeb page opened successfully! Returned to web console.\u001b[0m")
+                    break
 
-                    elif sites_execute == "6":
-                        webbrowser.open('www.github.com', new=2)
-                        print("\u001b[32mWeb page opened successfully! Returned to web console.\u001b[0m")
-                        break
+                elif sites_execute == "6":
+                    webbrowser.open('www.github.com', new=2)
+                    print("\u001b[32mWeb page opened successfully! Returned to web console.\u001b[0m")
+                    break
 
-                    else:
-                        print("\u001b[31mWebsite didn't found in list, try again!\u001b[0m")
+                else:
+                    print("\u001b[31mWebsite didn't found in list, try again!\u001b[0m")
 
             else:
                 print("\u001b[31mWhoa! Command not found. Type 'help' to show executable commands.\u001b[0m")
@@ -696,20 +696,20 @@ while True:
         os.system('cls')
 
     elif (user_command == "crdir" or user_command == "CRDIR"):
-        dir_name = input("Directory name: ")
+        dir_name = input("\u001b[0mDirectory name: ")
         os.mkdir(dir_name)
         print("\u001b[32mDirectory created successfully!\u001b[0m")
 
     elif (user_command == "del" or user_command == "DEL"):
 
         while True:
-            filetype = input("File type ('help' for commands): ")
+            filetype = input("\u001b[0mFile type ('help' for commands): ")
 
             if (filetype == "help" or filetype == "HELP"):
-                print(), print(), print("CLS    Refreshes the screen.")
+                print("\n\nCLS    Refreshes the screen.")
                 print("DIR    Assigns file type as directory.")
                 print("DOC    Assigns file type as document.")
-                print("EXIT   Returns to home."), print(), print()
+                print("EXIT   Returns to home.\n\n")
 
             elif (filetype == "cls" or filetype == "CLS"):
                 os.system('cls')
@@ -723,7 +723,7 @@ while True:
                     break
 
                 except OSError:
-                    print("\u001b[31mDirectory not found, try again.\u001b[0m"), print()
+                    print("\u001b[31mDirectory not found, try again.\u001b[0m\n")
 
             elif (filetype == "doc" or filetype == "DOC"):
                 mydoc = input("File path: ")
@@ -734,7 +734,7 @@ while True:
                     break
 
                 else:
-                    print("\u001b[31mFile not found, try again.\u001b[0m"), print()
+                    print("\u001b[31mFile not found, try again.\u001b[0m\n")
 
             elif (filetype == "exit" or filetype == "EXIT"):
                 break
@@ -743,63 +743,62 @@ while True:
                 print("\u001b[31mFile type / command not recognized! Type 'help' to show executable commands.\u001b[0m")
 
     elif (user_command == "sys" or user_command == "SYS"):
-        print(), print(), print("Device platform  : \u001b[32m" + device_platform + "\u001b[0m")
+        print("\u001b[0m\n\nDevice platform  : \u001b[32m" + device_platform + "\u001b[0m")
         print("Chipset          : \u001b[32m" + processor + "\u001b[0m")
         print("Operating system : \u001b[32m" + operating_system + "\u001b[0m")
-        print("Build            : \u001b[32m" + build + "\u001b[0m"), print()
+        print("Build            : \u001b[32m" + build + "\u001b[0m\n")
 
     elif (user_command == "vdl" or user_command == "VDL"):
 
-        while True:
-            def dwl_vid():
-                with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-                    ydl.download([vidmain])
+        def dwl_vid():
+            with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+                ydl.download([vidmain])
 
-            vidformat = input("Download as (audio/video/exit): ")
+        vidformat = input("\u001b[0mDownload as (audio/video/exit): ")
 
-            if (vidformat == "video" or vidformat == "VIDEO"):
+        if (vidformat == "video" or vidformat == "VIDEO"):
 
-                try:
-                    ydl_opts = {}
-                    vidlink = input("Video link / URL: ")
-                    vidmain = vidlink.strip()
-                    dwl_vid()
+            try:
+                ydl_opts = {}
+                vidlink = input("Video link / URL: ")
+                vidmain = vidlink.strip()
+                dwl_vid()
 
-                except:
-                    print("\u001b[31mInvalid link! Try again with a valid video link / URL.\u001b[0m"), print()
-
-                else:
-                    print("\u001b[32mVideo downloaded successfully!\u001b[0m")
-                    break
-
-            elif (vidformat == "audio" or vidformat == "AUDIO"):
-
-                try:
-                    ydl_opts = {
-                        'format': 'bestaudio/best',
-                        'postprocessors': [{
-                            'key': 'FFmpegExtractAudio',
-                            'preferredcodec': 'mp3',
-                            'preferredquality': '192',
-                        }],
-                    }
-
-                    vidlink = input("Video link / URL: ")
-                    vidmain = vidlink.strip()
-                    dwl_vid()
-                
-                except:
-                    print("\u001b[31mInvalid link! Try again with a valid video link / URL.\u001b[0m"), print()
-
-                else:
-                    print("\u001b[32mVideo successfully downloaded as audio.\u001b[0m")
-                    break
-
-            elif (vidformat == "exit" or vidformat == "EXIT"):
-                break
+            except:
+                print("\u001b[31mInvalid link! Try again with a valid video link / URL.\u001b[0m\n")
 
             else:
-                print("\u001b[31mFormat not recognised! Type either video or audio for format selection.\u001b[0m"), print()
+                print("\u001b[32mVideo downloaded successfully!\u001b[0m")
+                break
+
+        elif (vidformat == "audio" or vidformat == "AUDIO"):
+
+            try:
+                ydl_opts = {
+                    'format': 'bestaudio/best',
+                    'postprocessors': [{
+                        'key': 'FFmpegExtractAudio',
+                        'preferredcodec': 'mp3',
+                        'preferredquality': '192',
+                    }],
+                }
+
+                vidlink = input("Video link / URL: ")
+                vidmain = vidlink.strip()
+                dwl_vid()
+                
+            except:
+                print("\u001b[31mInvalid link! Try again with a valid video link / URL.\u001b[0m\n")
+
+            else:
+                print("\u001b[32mVideo successfully downloaded as audio.\u001b[0m")
+                break
+
+        elif (vidformat == "exit" or vidformat == "EXIT"):
+            break
+
+        else:
+            print("\u001b[31mFormat not recognised! Type either video or audio for format selection.\u001b[0m\n")
 
     else:
         print("\u001b[31mWhoa! Command not found. Type 'help' to show executable commands.\u001b[0m")
